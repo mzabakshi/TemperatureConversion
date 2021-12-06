@@ -1,0 +1,28 @@
+﻿@model TemperatureConversion.ViewModels.ConverterViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="alert alert-danger">
+    @Html.ValidationSummary()
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">@Html.TextBoxFor(x => x.Fahrenheit, new { @id = "txtFahrenheit" })F</div>
+            <div class="col-md-1"><text>=</text></div>
+            <div class="col-md-4">@Html.TextBoxFor(x => x.Celsius, new { @id = "txtCelsius" })C</div>
+        </div>
+        <div class="row">
+            <div class="col-md-1" style="padding-top: 5px;">
+                <input type="submit" value="Save" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@Scripts.Render("~/bundles/converterJs")

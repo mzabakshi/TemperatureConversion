@@ -1,0 +1,26 @@
+﻿@model IList<TemperatureConversion.ViewModels.ConverterViewModel>
+
+@{
+    ViewBag.Title = "Records";
+}
+
+<h2>Records</h2>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-2">Fahrenheit</div>
+        <div class="col-md-2">Celcius</div>
+        <div class="col-md-3">Date</div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-2">@item.Fahrenheit</div>
+            <div class="col-md-2">@item.Celsius</div>
+            <div class="col-md-3">@item.Date</div>
+        </div>
+    }
+
+</div>
+
